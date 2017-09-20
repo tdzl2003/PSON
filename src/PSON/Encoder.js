@@ -110,7 +110,7 @@ PSON.Encoder = (function(ByteBuffer, T) {
                     }
                     break;
                 case 'number':
-                    var intVal = parseInt(val);
+                    var intVal = val | 0;
                     if (val === intVal) {
                         var zzval = ByteBuffer.zigZagEncode32(val); // unsigned
                         if (zzval <= T.MAX) {
